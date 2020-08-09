@@ -1,6 +1,5 @@
 # Linux Fundamentals
 ---
 
-[Introduction](introduction.md)
-
+[Introduction](introduction.md)\
 [Boot Process](boot.md)

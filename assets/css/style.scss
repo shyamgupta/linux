@@ -5,21 +5,18 @@ html,body{
 	width:100%;
 }
 
-body,li,p{
-	color:black;
-}
 
-body{
-	background-color:#424B54;
-}
 
 #container{
+	height:auto;
 	width:75%;
 	margin:auto
 }
 .inner,#main-content{
+	height:auto;
 	width:100%;
 	margin:auto;
+	background-color:green;
 }
 
 hr{

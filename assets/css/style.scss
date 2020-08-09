@@ -3,6 +3,7 @@
 @import "{{ site.theme }}";
 html,body{
 	width:100%;
+	text-shadow:none;
 
 }
 
@@ -12,7 +13,7 @@ html,body{
 	height:auto;
 	width:75%;
 	margin:auto
-	outline:1px solid red;
+	outline:2px solid red;
 }
 .inner,#main-content{
 	height:auto;
@@ -20,16 +21,13 @@ html,body{
 	margin:auto;
 	padding:10px;
 	text-shadow:none;
-	outline:1px solid blue;
+	outline:2px solid blue;
 }
 
 ul li{
 	padding-left:none;
 }
 
-hr{
-	color: 1px solid black;
-}
 
 .language-plaintext{
 	background-color:#424B54;

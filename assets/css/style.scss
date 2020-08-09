@@ -12,6 +12,7 @@ html,body{
 	height:auto;
 	width:75%;
 	margin:auto
+	outline:1px solid red;
 }
 .inner,#main-content{
 	height:auto;
@@ -19,6 +20,7 @@ html,body{
 	margin:auto;
 	padding:10px;
 	text-shadow:none;
+	outline:1px solid blue;
 }
 
 ul li{

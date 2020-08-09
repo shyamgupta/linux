@@ -3,6 +3,7 @@
 @import "{{ site.theme }}";
 html,body{
 	width:100%;
+
 }
 
 
@@ -17,6 +18,7 @@ html,body{
 	width:90%;
 	margin:auto;
 	padding:10px;
+	text-shadow:none;
 }
 
 hr{

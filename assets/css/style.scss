@@ -1,14 +1,13 @@
+
 ---
 ---
+
 @import "{{ site.theme }}";
 html,body{
 	width:100%;
 	text-shadow:none;
 
 }
-
-
-
 #container{
 	height:auto;
 	width:75%;
@@ -23,12 +22,9 @@ html,body{
 	text-shadow:none;
 	border:2px solid blue;
 }
-
 ul li{
 	padding-left:none;
 }
-
-
 .language-plaintext{
 	background-color:#424B54;
 	padding:5px;

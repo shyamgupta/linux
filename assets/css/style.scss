@@ -3,8 +3,12 @@
 @import "{{ site.theme }}";
 html,body{
 	width:100%;
+}
+
+body,li,p{
 	color:black;
 }
+
 #container{
 	width:80%;
 	margin:auto

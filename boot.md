@@ -53,20 +53,17 @@ The task of a boot loader sounds simple: It loads the kernel into memory, and th
 The answers are (typically) that the kernel and its parameters are usually somewhere on the root filesystem. It sounds like the kernel parameters should be easy to find, except that the kernel is not yet running, so it can’t traverse a filesystem to find the necessary files. Worse, the kernel device drivers normally used to access the disk are also unavailable. We will see below how this is addressed using the `initramfs`
 	
 **The 2nd stage bootloader performs the following activities:**
-
 	1. Search for the compressed kernel image (vmlinuz) in the /boot directory and load it into memory.
 	2. Extract the contents of the **initial RAM disk, initrd or initramfs** (which is a file containing loadable kernel modules). initramfs file contains a mini-root filesystem that has the kernel modules necessary when the system is booting. It is located in /boot and there is a unique initramfs file for each kernel. It’s main purpose is to provide kernel modules required to mount the root filesystem. It consists of a set of directories bundled in an archive that is extracted at boot time. *This initrd serves as a temporary root file system in RAM and allows the kernel to fully boot without having to mount any physical disks. Since the necessary modules needed to interface with peripherals can be part of the initrd, the kernel can be very small, but still support a large number of possible hardware configurations.*
 
-
 To hand over the control to the kernel, the bootloader has to achieve two major things.
 	- **Load the kernel and initramfs into memory**: GRUB will not load the kernel (/boot/vmlinuz) at any random location; it will always be loaded at a special location which varies as per the Linux distribution/version and CPU architecture of the system. **vmlinuz is an archive file, and is made from three parts**:
-	
-	```bash
-	vmlinuz =  Header + Kernel Setup Code + vmlinux (actual compressed kernel)
-	vm = virtual memory, z = zipped file
-	```
-vmlinuz is a compressed file of the actual kernel’s binary vmlinux. You cannot decompress this file with gunzip/bunzip or even with tar. **The kernel extracts itself with the help of the header of the vmlinuz file.**
 
+```bash
+vmlinuz =  Header + Kernel Setup Code + vmlinux (actual compressed kernel)
+vm = virtual memory, z = zipped file
+```
+vmlinuz is a compressed file of the actual kernel’s binary vmlinux. You cannot decompress this file with gunzip/bunzip or even with tar. **The kernel extracts itself with the help of the header of the vmlinuz file.**\
 	- **Set kernel command-line parameters**: These are parameters like root device name, mount options like ro or rw, the initramfs name, the initramfs size, etc. and the are passed by GRUB/the bootloader to the kernel. `cat /proc/cmdline` can show the kernal command line parameters. In this file, the `root` parameter specifies the location of the root filesystem; without it, the kernel cannot find init and therefore cannot perform the user space start. On most modern systems, this location is specified as UUID, which is a type of unique serial number. To view a list of devices and the corresponding filesystems and UUIDs on your system, use the `blkid` command.
 
 4. **Start systemd**: After the kernel is booted, the root file system is pivoted, where the initrd root file system is unmounted and the real root file system is mounted (as specified in the “root=” in grub.conf file) in read only mode, and starts the **systemd** process with a PID of 1.

@@ -1,4 +1,8 @@
- - `pwd` : Displays the current working directory
+[Home](index.md)
+
+#Navigation
+---
+- `pwd` : Displays the current working directory
 - `cd ~` or `cd` will switch to your home directory
 - `cd ..` will switch to parent directory (of the current working directory)
 - `cd -` will switch to previous directory

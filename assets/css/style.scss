@@ -1,6 +1,12 @@
 ---
 ---
 @import "{{ site.theme }}";
+html,body{
+	width:100%;
+}
+#container{
+	width:80%;
+}
 .inner{
 	width:70%;
 }

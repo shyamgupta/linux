@@ -10,7 +10,7 @@
 	2. Process management: Determine which processes can use the central processing unit (CPU), when, and for how long.
 	3. Device drivers: Act as mediator/interpreter between the hardware and processes.
 	4. System calls and security: Receive requests for service from the processes
-- Distribution: It consists of the **kernel plus a number of other software tools** for file-related operations, user management, and software package management. Each of these tools provides a part of the complete system. Each tool is often its own separate project, with its own developers working to perfect that piece of the system. Linux distributions may be based on different kernel versions. For example, the very popular RHEL 7 distribution is based on the 3.10 kernel. 
+- **Distribution**: It consists of the **kernel plus a number of other software tools** for file-related operations, user management, and software package management. Each of these tools provides a part of the complete system. Each tool is often its own separate project, with its own developers working to perfect that piece of the system. Linux distributions may be based on different kernel versions. For example, the very popular RHEL 7 distribution is based on the 3.10 kernel. 
 
 Linux kernels are identified by a set of four numbers:
 	- Kernel Version

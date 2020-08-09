@@ -1,6 +1,6 @@
 [Home](index.md)
 
-#Navigation
+# Navigation
 ---
 - `pwd` : Displays the current working directory
 - `cd ~` or `cd` will switch to your home directory

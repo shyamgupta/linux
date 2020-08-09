@@ -88,9 +88,9 @@ The **dracut** utility is used to build an initramfs, and **/etc/dracut.conf** i
 ```bash
 #Editing GRUB Configuration
 grub-mkconfig -o /boot/grub2/grub.cfg
-```                                               
-
-If you do not specify the `-o` flag, the output will be written to stdout (the screen), which is not useful.                                                                       
+```          
+                                     
+If you do not specify the `-o` flag, the output will be written to stdout (the screen), which is not useful.                     
 - `/etc/grub.d/` - It contains GRUB scripts. These scripts are building blocks from which the grub.cfg file is built. When the relevant GRUB command is executed, the scripts are read in a certain sequence and grub.cfg is created.
 
 ## systemd
